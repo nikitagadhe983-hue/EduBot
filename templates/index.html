@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBot - AI Learning Assistant</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <h2>EduBot</h2>
+                <p>AI Learning Assistant</p>
+            </div>
+        </div>
+
+        <button id="new-chat" class="new-chat">
+            <span>＋</span> New chat
+        </button>
+
+        <div class="sidebar-heading">EXPLORE</div>
+
+        <button class="prompt-button" data-prompt="Teach me Python from basics with examples.">
+            <span>⌘</span> Learn Python
+        </button>
+
+        <button class="prompt-button" data-prompt="Explain artificial intelligence in simple English.">
+            <span>✧</span> Artificial Intelligence
+        </button>
+
+        <button class="prompt-button" data-prompt="Give me 10 computer science MCQs with answers.">
+            <span>☷</span> Practice MCQs
+        </button>
+
+        <button class="prompt-button" data-prompt="Help me prepare for my exams with short notes.">
+            <span>▤</span> Exam preparation
+        </button>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Your personal study companion
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="mobile-brand">✦ EduBot</div>
+            <span class="online-status">
+                <span class="status-dot"></span> AI Assistant
+            </span>
+        </header>
+
+        <section id="chat-messages" class="chat-messages">
+            <div id="welcome" class="welcome">
+                <div class="welcome-icon">✦</div>
+                <p class="eyebrow">YOUR AI STUDY PARTNER</p>
+                <h1>What do you want to learn?</h1>
+                <p class="welcome-description">
+                    Ask questions, understand concepts, write code,
+                    and prepare for your exams.
+                </p>
+
+                <div class="suggestions">
+                    <button data-prompt="Teach me Python from basics with an example.">
+                        <span>⌘</span>
+                        <strong>Learn to code</strong>
+                        <small>Start with Python basics</small>
+                    </button>
+
+                    <button data-prompt="Explain machine learning with real-life examples.">
+                        <span>✧</span>
+                        <strong>Understand AI</strong>
+                        <small>Learn concepts simply</small>
+                    </button>
+
+                    <button data-prompt="Give me short notes on computer networks for exams.">
+                        <span>▤</span>
+                        <strong>Exam preparation</strong>
+                        <small>Get revision notes</small>
+                    </button>
+
+                    <button data-prompt="Give me 5 Python MCQs and explain the answers.">
+                        <span>☷</span>
+                        <strong>Test your skills</strong>
+                        <small>Practice with questions</small>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="composer-area">
+            <form id="chat-form" class="composer">
+                <textarea
+                    id="message-input"
+                    placeholder="Message EduBot..."
+                    rows="1"
+                    maxlength="4000"
+                    aria-label="Write your message"
+                ></textarea>
+
+                <button id="send-button" type="submit"
+                        aria-label="Send message">↑</button>
+            </form>
+
+            <p class="disclaimer">
+                EduBot can make mistakes. Verify important information.
+            </p>
+        </footer>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
